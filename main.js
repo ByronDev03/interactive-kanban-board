@@ -41,7 +41,7 @@ function crearTicket()
   // Validación: no permitir títulos vacíos
   if (!titulo.trim()) 
   {
-    mostrarAdvertencia("⚠️ Ingresa un título para el ticket");
+    mostrarAdvertencia("Ingresa un título para el ticket");
     return;
   }
 
@@ -153,7 +153,7 @@ function drop()
   if (sourceColumn === "todo" && targetColumn === "done") 
   {
     mostrarAdvertencia(
-      "⚠️ No puedes mover directamente de 'To Do' a 'Done'. Pásalo primero por 'In Progress'."
+      "No puedes mover directamente de 'To Do' a 'Done'. Pásalo primero por 'In Progress'."
     );
     this.classList.remove("highlight");
     return;
@@ -162,7 +162,7 @@ function drop()
   // Regla: No permitir Done → To Do
   if (sourceColumn === "done" && targetColumn === "todo") 
   {
-    mostrarAdvertencia("⚠️ No puedes regresar un ticket de 'Done' a 'To Do'.");
+    mostrarAdvertencia("No puedes regresar un ticket de 'Done' a 'To Do'.");
     this.classList.remove("highlight");
     return;
   }
@@ -182,7 +182,7 @@ function drop()
   if (sourceColumn === "done" && targetColumn === "inprogress") 
   {
     mostrarAdvertencia(
-      "⚠️ Un ticket finalizado no puede volver a 'In Progress'. Crea un nuevo ticket si es necesario."
+      "Un ticket finalizado no puede volver a 'In Progress'. Crea un nuevo ticket si es necesario."
     );
     this.classList.remove("highlight");
     return;
@@ -379,7 +379,7 @@ function borrarTodo()
 
   if (totalTickets === 0) 
   {
-    mostrarAdvertencia("⚠️ No hay tickets en el tablero. Crea uno primero.");
+    mostrarAdvertencia("No hay tickets en el tablero. Crea uno primero.");
     return;
   }
 
@@ -391,7 +391,7 @@ function borrarTodo()
       localStorage.removeItem("kanbanContador");
       contador = 1;
       actualizarContadores();
-      mostrarAdvertencia("✅ Tablero limpiado con éxito");
+      mostrarAdvertencia("Tablero limpiado con éxito");
     }
   );
 }
@@ -468,7 +468,7 @@ const darkModeBtn = document.getElementById("darkModeToggle");
 // Aplica el modo oscuro si fue guardado previamente
 if (localStorage.getItem("darkMode") === "enabled") {
   document.body.classList.add("dark");
-  darkModeBtn.textContent = "☀️ Modo Claro";
+  darkModeBtn.textContent = "Modo Claro";
 }
 
 // Alterna el modo oscuro
@@ -476,7 +476,7 @@ darkModeBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 
   const isDark = document.body.classList.contains("dark");
-  darkModeBtn.textContent = isDark ? "☀️ Modo Claro" : "🌙 Modo Oscuro";
+  darkModeBtn.textContent = isDark ? "Modo Claro" : "Modo Oscuro";
 
   localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
 });
