@@ -139,7 +139,9 @@ Este proyecto fue creado con fines de:
 ---
 
 ## Vista previa
-[Vista previa del tablero Kanban](assets/screenshot.png)
+<div align="center">
+  <img src="assets/screenshot.png" width="600" alt="Tablero Kanban Intercativo"/>
+</div>
 
 ---
 
