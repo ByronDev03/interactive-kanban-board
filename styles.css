@@ -325,10 +325,11 @@ body.dark #customConfirm button {
 @media (max-width: 768px) {
 
   .kanban {
-    overflow-x: auto;
     display: flex;
     gap: 16px;
+    overflow-x: auto;
     padding: 10px;
+    justify-content: flex-start; /* 👈 AGREGA ESTO */
     scroll-snap-type: x mandatory;
   }
 
