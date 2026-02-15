@@ -258,9 +258,13 @@ body.dark .limit-message {
 }
 
 /* =========================
-   HEADER CORRECTO
+   HEADER RESPONSIVE
 ========================= */
+
 .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   margin-bottom: 20px;
 }
@@ -270,9 +274,9 @@ body.dark .limit-message {
   margin: 0;
 }
 
+/* Desktop */
 #darkModeToggle {
   position: absolute;
-  top: 0;
   right: 0;
 }
 
@@ -366,4 +370,17 @@ body.dark #customConfirm button {
   #darkModeToggle {
     top: 70px;
   }
+}
+
+@media (max-width: 600px) {
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #darkModeToggle {
+    position: static;
+  }
+
 }
