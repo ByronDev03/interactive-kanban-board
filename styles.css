@@ -319,7 +319,9 @@ body.dark #customConfirm button {
 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 
-  transition: all 0.3s ease;
+  opacity: 0;                
+  pointer-events: none;     
+  transition: opacity 0.3s ease;  
   z-index: 1000;
 }
 

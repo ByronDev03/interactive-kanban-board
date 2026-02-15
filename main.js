@@ -25,8 +25,11 @@ let contador = 1;
 // Referencia temporal al ticket que está siendo arrastrado
 let draggedTicket = null;
 
-// Al cargar el DOM, se restauran los tickets guardados previamente
-window.addEventListener("DOMContentLoaded", cargarDesdeLocalStorage);
+window.addEventListener("DOMContentLoaded", () => {
+  cargarDesdeLocalStorage();
+  actualizarBotonBorrar();
+});
+
 
 /* ==========================================================================
    CREACIÓN DE TICKETS
@@ -78,6 +81,7 @@ function crearTicket()
   // Actualiza UI y persistencia
   actualizarContadores();
   guardarEnLocalStorage();
+  actualizarBotonBorrar();
 }
 
 /* ==========================================================================
@@ -91,6 +95,7 @@ function eliminarTicket(id)
 
   actualizarContadores();
   guardarEnLocalStorage();
+  actualizarBotonBorrar();
 }
 
 /* ==========================================================================
@@ -237,6 +242,26 @@ function actualizarContadores()
   });
 }
 
+/* ==========================================================================  
+   VISIBILIDAD DEL BOTÓN BORRAR TODO
+========================================================================== */
+
+function actualizarBotonBorrar() 
+{
+  const tickets = document.querySelectorAll(".ticket");
+  const boton = document.getElementById("clearBoardBtn");
+
+  if (!boton) return;
+
+  if (tickets.length > 0) {
+    boton.style.opacity = "1";
+    boton.style.pointerEvents = "auto";
+  } else {
+    boton.style.opacity = "0";
+    boton.style.pointerEvents = "none";
+  }
+}
+
 /* ==========================================================================
    MENSAJES Y ADVERTENCIAS PERSONALIZADAS
    ========================================================================== */
@@ -354,6 +379,7 @@ function cargarDesdeLocalStorage()
   });
 
   actualizarContadores();
+  actualizarBotonBorrar();
 }
 
 /* ==========================================================================
@@ -392,6 +418,7 @@ function borrarTodo()
       contador = 1;
       actualizarContadores();
       mostrarAdvertencia("Tablero limpiado con éxito");
+      actualizarBotonBorrar();
     }
   );
 }
