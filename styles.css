@@ -212,12 +212,6 @@ button:hover {
    para evitar interferir con el flujo principal.
    ========================================================================== */
 
-#clearBoardBtn {
-  position: relative;
-  display: block;
-  margin: 20px auto 0 auto;      /* Centrado horizontal */
-}
-
 /* ==========================================================================
    DARK MODE
    Se activa cuando el body tiene la clase .dark
@@ -263,30 +257,24 @@ body.dark .limit-message {
   color: #fff;
 }
 
+/* =========================
+   HEADER CORRECTO
+========================= */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
   margin-bottom: 20px;
-  flex-wrap: wrap;
 }
 
-h1 {
+.header h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 #darkModeToggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 3000;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
-
-body {
-  padding-top: 80px;
-}
-
 
 /* =========================================================
    FIX MODAL CONFIRMACIÓN – DARK MODE
@@ -343,7 +331,7 @@ body.dark #customConfirm button {
     gap: 16px;
     overflow-x: auto;
     padding: 10px;
-    justify-content: flex-start; /* 👈 AGREGA ESTO */
+    justify-content: flex-start;
     scroll-snap-type: x mandatory;
   }
 
