@@ -326,12 +326,35 @@ body.dark #customConfirm button {
 
   .kanban {
     overflow-x: auto;
-    justify-content: flex-start;
-    padding-bottom: 10px;
+    display: flex;
+    gap: 16px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
   }
 
   .column {
-    min-width: 260px;
+    min-width: 280px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
   }
 
+}
+
+.kanban::-webkit-scrollbar {
+  display: none;
+}
+
+.kanban {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 768px) {
+  #clearBoardBtn {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+  }
 }
