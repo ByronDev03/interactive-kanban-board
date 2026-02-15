@@ -263,9 +263,18 @@ body.dark .limit-message {
   color: #fff;
 }
 
-/* ==========================================================
-   BOTÓN MODO OSCURO – POSICIÓN SUPERIOR DERECHA
-   ========================================================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 #darkModeToggle {
   position: fixed;
@@ -273,6 +282,11 @@ body.dark .limit-message {
   right: 20px;
   z-index: 3000;
 }
+
+body {
+  padding-top: 80px;
+}
+
 
 /* =========================================================
    FIX MODAL CONFIRMACIÓN – DARK MODE
@@ -357,5 +371,11 @@ body.dark #customConfirm button {
     bottom: 20px;
     right: 20px;
     font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  #darkModeToggle {
+    top: 70px;
   }
 }
