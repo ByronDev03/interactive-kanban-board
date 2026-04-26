@@ -490,20 +490,19 @@ function mostrarConfirmacionPersonalizada(mensaje, onConfirm)
    DARK MODE – PERSISTENTE CON LOCAL STORAGE
    ========================================================================== */
 
-const darkModeBtn = document.getElementById("darkModeToggle");
+const darkModeToggle = document.getElementById("darkModeToggle");
 
-// Aplica el modo oscuro si fue guardado previamente
+// Cargar estado guardado
 if (localStorage.getItem("darkMode") === "enabled") {
   document.body.classList.add("dark");
-  darkModeBtn.textContent = "Modo Claro";
+  darkModeToggle.checked = true;
 }
 
-// Alterna el modo oscuro
-darkModeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
+// Evento cambio switch
+darkModeToggle.addEventListener("change", () => {
+  const isDark = darkModeToggle.checked;
 
-  const isDark = document.body.classList.contains("dark");
-  darkModeBtn.textContent = isDark ? "Modo Claro" : "Modo Oscuro";
+  document.body.classList.toggle("dark", isDark);
 
   localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
 });
