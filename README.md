@@ -65,7 +65,7 @@ El tablero incluye restricciones y validaciones para simular un flujo de trabajo
 - Limpia el tablero y el LocalStorage de forma segura.
 
 ### Modo Oscuro (Dark Mode)
-- Activación/desactivación mediante botón.
+- Activación/desactivación mediante botón tipo switch.
 - Preferencia guardada en **LocalStorage**.
 - El modo seleccionado se mantiene al recargar la página.
 - Implementado sin duplicar estilos ni romper el diseño original.
@@ -108,12 +108,12 @@ Este flujo simula buenas prácticas reales de metodologías ágiles.
 ```
 /interactive-kanban-board
 │
-├── index.html        # Estructura principal
-├── stylesKBN.css     # Estilos del tablero
-├── mainKBN.js        # Lógica del Kanban
-├── assets/           # Iconos o recursos
-└── README.md         # Documentación del proyecto
-└── LICENCE           # Defince las reglas legales del uso
+├── index.html     # Estructura principal
+├── styles.css     # Estilos del tablero
+├── main.js        # Lógica del Kanban
+├── assets/        # Iconos o recursos
+└── README.md      # Documentación del proyecto
+└── LICENCE        # Defince las reglas legales del uso
 ```
 
 ---
