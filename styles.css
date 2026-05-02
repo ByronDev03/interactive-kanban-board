@@ -518,3 +518,10 @@ input:checked + .slider .moon {
 input:checked + .slider .sun {
   opacity: 1;
 }
+
+@media (max-width: 600px){
+  #darkModeToggle {
+    top: 90px;
+    right: 15px;
+  }
+}
