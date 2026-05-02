@@ -393,10 +393,11 @@ body.dark #customConfirm button {
 
 .switch {
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 50px;
-  height: 26px;
+  top: 20px;
+  right: 20px;
+
+  width: 70px;   /*  MÁS ANCHO */
+  height: 34px;  /*  MÁS ALTO */
 }
 
 .switch input {
@@ -406,33 +407,83 @@ body.dark #customConfirm button {
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  inset: 0;
-  background-color: #ccc;
-  border-radius: 34px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #2b2b2b;
+  border-radius: 50px;
   transition: 0.3s;
 }
 
+/* Bolita */
 .slider::before {
   content: "";
   position: absolute;
-  height: 20px;
-  width: 20px;
-  left: 3px;
-  top: 3px;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  top: 4px;
   background-color: white;
   border-radius: 50%;
   transition: 0.3s;
+  z-index: 2;
+}
+
+/* ICONOS */
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px; /* más grandes */
+  color: white;
+  opacity: 0.6;
+}
+
+/* Luna izquierda */
+.moon {
+  left: 10px;
+}
+
+/* Sol derecha */
+.sun {
+  right: 10px;
 }
 
 /* Estado activo */
 input:checked + .slider {
-  background-color: #4dabf7;
+  background-color: #2b2b2b;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.6);
 }
 
+/* Movimiento */
 input:checked + .slider::before {
-  transform: translateX(24px);
+  transform: translateX(45px); /* proporcional al nuevo tamaño */
+}
+
+/* modo oscuro */
+body.dark .moon {
+  color: #ffffff;
+  opacity: 1;
+}
+
+body.dark .sun {
+  color: #ffffff;
+  opacity: 0.3;
+}
+
+/* modo claro */
+body:not(.dark) .sun {
+  color: #f59e0b; /* amarillo visible */
+  opacity: 1;
+}
+
+body:not(.dark) .moon {
+  color: #555;
+  opacity: 0.3;
+}
+
+body:not(.dark) .slider {
+  background-color: #ddd;
 }
 
 /* ICONOS DEL SWITCH */
