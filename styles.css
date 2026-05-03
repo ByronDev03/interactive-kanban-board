@@ -522,6 +522,6 @@ input:checked + .slider .sun {
 @media (max-width: 600px){
   .switch {
     position: static;
-    margin-top: 10px;
+    margin-top: -11px;
   }
 }
