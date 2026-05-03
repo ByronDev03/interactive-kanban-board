@@ -56,15 +56,15 @@ function crearTicket()
 
   // Asigna clase CSS según la prioridad
   let prioridadClase = "";
-  if (prioridad === "Alta") prioridadClase = "priority-alta";
-  if (prioridad === "Media") prioridadClase = "priority-media";
-  if (prioridad === "Baja") prioridadClase = "priority-baja";
+  if (prioridad === "High") prioridadClase = "priority-alta";
+  if (prioridad === "Medium") prioridadClase = "priority-media";
+  if (prioridad === "Low") prioridadClase = "priority-baja";
 
   // Estructura interna del ticket
   ticket.innerHTML = 
   `
     <p><strong>#${contador - 1}</strong> – ${titulo}</p>
-    <p class="priority ${prioridadClase}">Prioridad: ${prioridad}</p>
+    <p class="priority ${prioridadClase}">Priority: ${prioridad}</p>
     <button class="delete-btn" onclick="eliminarTicket('${ticket.id}')">×</button>
   `;
 
@@ -337,7 +337,7 @@ function guardarEnLocalStorage()
 
     const prioridad = ticket
       .querySelector(".priority")
-      .textContent.replace("Prioridad: ", "")
+      .textContent.replace("Priority: ", "")
       .trim();
 
     const columna = ticket.parentElement.id;
@@ -361,13 +361,13 @@ function cargarDesdeLocalStorage()
     ticket.id = item.id;
 
     let prioridadClase = "";
-    if (item.prioridad === "Alta") prioridadClase = "priority-alta";
-    if (item.prioridad === "Media") prioridadClase = "priority-media";
-    if (item.prioridad === "Baja") prioridadClase = "priority-baja";
+    if (item.prioridad === "High") prioridadClase = "priority-alta";
+    if (item.prioridad === "Medium") prioridadClase = "priority-media";
+    if (item.prioridad === "Low") prioridadClase = "priority-baja";
 
     ticket.innerHTML = `
       <p><strong>#${item.id.replace("ticket", "")}</strong> – ${item.titulo}</p>
-      <p class="priority ${prioridadClase}">Prioridad: ${item.prioridad}</p>
+      <p class="priority ${prioridadClase}">Priority: ${item.prioridad}</p>
       <button class="delete-btn" onclick="eliminarTicket('${item.id}')">×</button>
     `;
 
