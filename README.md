@@ -140,7 +140,7 @@ Este proyecto fue creado con fines de:
 
 ## Vista previa
 <div align="center">
-  <img src="assets/screenshot.png" width="600" alt="Tablero Kanban Intercativo"/>
+  <img src="assets/board-kanban.png" width="600" alt="Tablero Kanban Intercativo"/>
 </div>
 
 ---
