@@ -521,7 +521,7 @@ input:checked + .slider .sun {
 
 @media (max-width: 600px){
   #darkModeToggle {
-    top: 90px;
+    top: 100px;
     right: 15px;
   }
 }
