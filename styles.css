@@ -393,7 +393,7 @@ body.dark #customConfirm button {
 
 .switch {
   position: absolute;
-  top: 20px;
+  right: 20px;
   top: 0;
 
   width: 70px;   /*  MÁS ANCHO */
