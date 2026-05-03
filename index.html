@@ -42,7 +42,7 @@
        ===================================================== -->
 
   <div class="header">
-    <h1>Tablero Kanban Interactivo</h1>
+    <h1>Interactive Kanban Board</h1>
     <label class="switch">
       <input type="checkbox" id="darkModeToggle">
       <span class="slider">
@@ -61,30 +61,30 @@
     <input 
       type="text" 
       id="titulo" 
-      placeholder="Título del ticket"
+      placeholder="Ticket title"
     >
 
     <!-- Selector de prioridad del ticket -->
     <select id="prioridad">
-      <option value="Alta">Alta</option>
-      <option value="Media">Media</option>
-      <option value="Baja">Baja</option>
+      <option value="Alta">High</option>
+      <option value="Media">Medium</option>
+      <option value="Baja">Low</option>
     </select>
 
     <!-- Botón para crear un nuevo ticket -->
     <!-- Llama a la función crearTicket() en JavaScript -->
     <button onclick="crearTicket()" class="btn-crear">
       <i class="bi bi-plus-circle"></i>
-       Crear Ticket
+       Add Task
     </button>
 
     <!-- Selector para filtrar tickets por prioridad -->
     <!-- Dispara la función aplicarFiltro() al cambiar -->
     <select id="filtro" onchange="aplicarFiltro()">
-      <option value="Todos">Filtrar: Todos</option>
-      <option value="Alta">Alta</option>
-      <option value="Media">Media</option>
-      <option value="Baja">Baja</option>
+      <option value="Todos">Filter: All</option>
+      <option value="Alta">High</option>
+      <option value="Media">Medium</option>
+      <option value="Baja">Low</option>
     </select>
   </div>
 
